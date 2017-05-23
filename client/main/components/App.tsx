@@ -11,7 +11,8 @@ import {
   clearCompleted,
   completeAll,
   completeTodo,
-  deleteTodo
+  deleteTodo,
+  Selector
 } from '../../todos';
 
 interface AppProps {
@@ -33,6 +34,9 @@ class App extends React.Component<AppProps, void> {
             completeTodo={(t: model.Todo) => dispatch(completeTodo(t))}
             clearCompleted={() => dispatch(clearCompleted())}
             completeAll={() => dispatch(completeAll())}/>
+        <Selector
+            todos={todos}
+        />
       </div>
     );
   }
